@@ -16,6 +16,8 @@ This solution leverages several key components within Flowise:
 4. **ChatOpenAI Custom**: This node is configured to connect to a custom **LLM (Large Language Model) Endpoint URI**, enabling the use of a specific LLM model for chat inference.
 5. **Conversational Retrieval QA Chain**: This chain is used to handle the retrieval and question-answering tasks, combining the embeddings and vector store to provide relevant answers.
 
+![image](https://github.com/user-attachments/assets/a72d485e-c699-4329-8cba-27d16280be54)
+
 ## Key Components
 
 ### **LLM Inference Server**  
@@ -45,11 +47,14 @@ This node forms the backbone of the question-answering mechanism. It integrates 
    oc apply -f flowise.yaml
    oc expose svc/flowise-service
 
+![image](https://github.com/user-attachments/assets/3a1dab28-1c4b-4ecd-a042-43cf51bb3b6e)
+
 2. **Access Flowise UI**:
 Once Flowise is deployed, navigate to **Routes** in your OpenShift project 'flowise'. There, you will find the URL for the Flowise UI. Open this route in a web browser to access the Flowise interface.
 
 3. **Import the Chatflow**:
-In the Flowise UI, import the attached **Chatflow** (e.g., **Tech Support Chat**) into the Flowise environment. This Chatflow contains the workflow for generating the chat interface, integrating the necessary nodes for question answering.
+In the Flowise UI, import the attached **Chatflow** (e.g., **Tech Support Chat**) into the Flowise environment <img width="273" alt="image" src="https://github.com/user-attachments/assets/87e3c4bb-3a7f-4909-89f9-f89d776a16ce" />.<br>
+This Chatflow contains the workflow for generating the chat interface, integrating the necessary nodes for question answering.
 
 4. **Configure Nodes in Chatflow**:
 Open the **Tech Support Chat** flow inside Flowise and configure the following nodes:
@@ -61,10 +66,12 @@ Open the **Tech Support Chat** flow inside Flowise and configure the following n
     - **Conversational Retrieval QA Chain**: Link the nodes in this chain to perform the retrieval and QA tasks.
 
 5. **Upsert Vector Store**:
-After configuring the nodes, click the **Upsert Vector Store** button to load the knowledge base content into the **In-Memory Vector Store**. This step will convert the knowledge base into embeddings and store them in the vector store for efficient retrieval.
+After configuring the nodes, click the **Upsert Vector Store** button <img width="30" alt="image" src="https://github.com/user-attachments/assets/18e9736e-2ff2-4d1e-a6ed-dae04e6d728f" />
+to load the knowledge base content into the **In-Memory Vector Store**. This step will convert the knowledge base into embeddings and store them in the vector store for efficient retrieval.
 
 6. **Click Chat Icon and Start the Chat**:
-Once the knowledge base has been loaded, click the **Chat** icon in the Flowise UI to bring up the chat interface. This will allow users to begin interacting with the chat agent and ask questions based on the knowledge base.
+Once the knowledge base has been loaded, click the **Chat** icon <img width="30" alt="image" src="https://github.com/user-attachments/assets/e3590a6a-796e-4aad-8d3e-4726fa33332d" />
+ in the Flowise UI to bring up the chat interface. This will allow users to begin interacting with the chat agent and ask questions based on the knowledge base.
 
 7. **Engage with the Chat**:
 You can now interact with the chat agent, and it will respond using the relevant content from the PDFs, powered by the Granite model on Red Hat OpenShift AI.
