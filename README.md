@@ -43,6 +43,7 @@ This node forms the backbone of the question-answering mechanism. It integrates 
 
    ```bash
    oc apply -f flowise.yaml
+   oc expose svc/flowise-service
 
 2. **Access Flowise UI**:
 Once Flowise is deployed, navigate to **Routes** in your OpenShift project 'flowise'. There, you will find the URL for the Flowise UI. Open this route in a web browser to access the Flowise interface.
