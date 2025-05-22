@@ -53,7 +53,7 @@ This node forms the backbone of the question-answering mechanism. It integrates 
 Once Flowise is deployed, navigate to **Routes** in your OpenShift project 'flowise'. There, you will find the URL for the Flowise UI. Open this route in a web browser to access the Flowise interface.
 
 3. **Import the Chatflow**:
-In the Flowise UI, import the attached **Chatflow** (e.g., **Tech Support Chat**) into the Flowise environment <img width="273" alt="image" src="https://github.com/user-attachments/assets/87e3c4bb-3a7f-4909-89f9-f89d776a16ce" />.<br>
+In the Flowise UI, import the **Tech Support Chat Chatflow JSON** (e.g., **Tech Support Chat**) into the Flowise environment <img width="273" alt="image" src="https://github.com/user-attachments/assets/87e3c4bb-3a7f-4909-89f9-f89d776a16ce" />.<br>
 This Chatflow contains the workflow for generating the chat interface, integrating the necessary nodes for question answering.
 
 4. **Configure Nodes in Chatflow**:
