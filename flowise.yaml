@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flowise-deployment
+  labels:
+    app: flowise
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: flowise
+  template:
+    metadata:
+      labels:
+        app: flowise
+    spec:
+      containers:
+        - name: flowise
+          image: docker.io/flowiseai/flowise  # Docker Hub image
+          ports:
+            - containerPort: 3000
+          volumeMounts:
+            - name: flowise-volume
+              mountPath: /home/.flowise  # Adjust the mount path if needed
+          resources:
+            limits:
+              memory: "1Gi"
+              cpu: "1"
+            requests:
+              memory: "512Mi"
+              cpu: "500m"
+      volumes:
+        - name: flowise-volume
+          emptyDir: {}  # Using emptyDir to emulate the -v flag for temporary storage
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: flowise-service
+spec:
+  selector:
+    app: flowise
+  ports:
+    - protocol: TCP
+      port: 3000
+      targetPort: 3000
+  type: ClusterIP
+
+
+#oc adm policy add-scc-to-user anyuid -z default
+#oc apply -f flowise-deployment.yaml
