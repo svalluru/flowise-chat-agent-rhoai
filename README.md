@@ -1,6 +1,6 @@
-# Flowise Chat Agent using Granite on RHOAI
+# Building a Flowise Chat Agent with Granite Models on Red Hat OpenShift AI
 
-In this blog post, we’ll explore how to use **Flowise** to create a Chat Agent that interfaces with a knowledge base using **Granite** on **Red Hat OpenShift AI (RHOAI)**. Flowise provides an intuitive way to design workflows that integrate various AI models and services, and in this use case, we’ll build a conversational agent that can answer questions based on content from PDFs.
+In this blog post, we’ll explore how to use **Flowise** (https://flowiseai.com/) to create a Chat Agent that interfaces with a knowledge base using **Granite** on **Red Hat OpenShift AI (RHOAI)**. Flowise provides an intuitive way to design workflows that integrate various AI models and services, and in this use case, we’ll build a conversational agent that can answer questions based on content from PDFs.
 
 ## Use Case Overview
 
@@ -21,7 +21,7 @@ This solution leverages several key components within Flowise:
 ## Key Components
 
 ### **LLM Inference Server**  
-The LLM inference server is hosted on **Red Hat OpenShift AI** with the **Granite Model** (Granite-3.1-8B-Instruct). Granite is a powerful model that’s designed for instructive tasks, making it well-suited for conversational agents. This model is coupled with **Nomic-embed-text-v1.5**, which is used for generating high-quality text embeddings from the knowledge content.
+The LLM inference server is hosted on **Red Hat OpenShift AI** with the **Granite Model** (Granite-3.1-8B-Instruct). Granite is a powerful model that’s designed for instructive tasks, making it well-suited for conversational agents. This model is coupled with **Nomic-embed-text-v1.5**, which is used for generating high-quality text embeddings from the knowledge content. Here is an excellent video by Red Hat Research team : Guide to Deploying AI Models on Red Hat OpenShift AI (https://www.youtube.com/watch?v=5AjJAGDDDDQ)
 
 ### **File Loader**  
 The **File Loader** node is responsible for loading the PDF files into Flowise. These PDFs contain the knowledge base that will be used by the agent to respond to queries.
